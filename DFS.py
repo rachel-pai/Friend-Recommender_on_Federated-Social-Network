@@ -5,15 +5,13 @@ from helper import *
 # it visits an unvisited neighbor of most recentely visited nodes
 
 def findNext(id,temp_ids,followingData,ids):
-   print("id",id)
    if id == 0:
       vertice = getRandomlyUser(user_count)
    else:
       vertice = Node(id)
    # pay attention,account['following account'] isnt euqual to nodes amunt that following()return
    followingList = vertice.getFollowing()
-   if vertice.id not in temp_ids:
-      ids.append({'id': vertice.id, 'user': vertice.name, 'url': vertice.url})
+   ids.append({'id': vertice.id, 'user': vertice.name, 'url': vertice.url})
    temp_ids.append(vertice.id)
    n = -1
    if len(followingList) == 0:  # donesnt have any following
@@ -30,12 +28,17 @@ def findNext(id,temp_ids,followingData,ids):
                return 0,temp_ids,followingData,ids
                # need randomly choose node again, since all parents dont have any following nodes
             if len(vertice.getFollowing()) > 1:
-               break
+               followingLIst = vertice.getFollowing()
+               followinglistId = [x.id for x in followingLIst]
+               unvisitedNodes = list(set(followinglistId) - set(temp_ids))
+               if unvisitedNodes:
+                  break
    # we shouldnt look for visited children
    followingLIst = vertice.getFollowing()
    followinglistId = [x.id for x in followingLIst]
    unvisitedNodes = list(set(followinglistId) - set(temp_ids))
-   followingItem = Node(random.choice(unvisitedNodes))
+
+   followingItem = Node(random.choice(unvisitedNodes))   # randomly choosen unvisited nodes
    followingItem.getParent(vertice.id)
 
    if len(followingItem.getFollowing()) == 0:
@@ -56,11 +59,6 @@ def findNext(id,temp_ids,followingData,ids):
 def getFollowing(iterateNum):
    followingData = []
    temp_ids = []
-   if os.path.exists('path.csv'):
-      with open('path.csv','rt',encoding='utf-8') as csvfile:
-         readCSV = csv.reader(csvfile, delimiter=',')
-         temp_ids = [r[0] for r in readCSV]
-         temp_ids.pop(0)
    ids = []
    for i in range(0,iterateNum):
       if i == 0:
@@ -69,8 +67,9 @@ def getFollowing(iterateNum):
          nextId, temp_ids, followingData, ids = findNext(nextId,temp_ids,followingData,ids)
    return followingData,ids
 
-followingData,nodes = getFollowing(10)
+followingData,nodes = getFollowing(50)
 
-writeIntoCsvFile(filename='path', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='edges', header = ['from','to'],writenData=followingData)
-removeDuplicate('path','nodes')
+writeIntoCsvFile(filename='DFS_node_temp', header = ['id','user','url'],writenData=nodes)
+writeIntoCsvFile(filename='DFS_edge', header = ['from','to'],writenData=followingData)
+removeDuplicate('DFS_node_temp','DFS_node')
+addMissingNode('DFS_edge','DFS_node',header=['id','user','url'])

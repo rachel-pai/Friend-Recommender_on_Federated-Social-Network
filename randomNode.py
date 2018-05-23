@@ -13,10 +13,10 @@ def getFollowing(num):
                followingData.append({"from": vertice.id,"to":x.id})
                if x.id not in temp_ids:
                   temp_ids.append(x.id)
-                  ids.append({'id':x.id,'user':x.username,'url':x.url})
+                  ids.append({'id':x.id,'user':x.name,'url':x.url})
    return followingData,ids
 
-followingData,nodes = getFollowing(100)
+followingData,nodes = getFollowing(50)
 
 writeIntoCsvFile(filename='RR_node_temp', header = ['id','user','url'],writenData=nodes)
 writeIntoCsvFile(filename='RR_edge', header = ['from','to'],writenData=followingData)
