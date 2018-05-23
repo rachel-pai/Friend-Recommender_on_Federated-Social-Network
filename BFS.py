@@ -58,6 +58,7 @@ def getFollowing(num):
 
 followingData,nodes = getFollowing(3)
 
+
 writeIntoCsvFile(filename='BFS_node_temp', header = ['id','user','url'],writenData=nodes)
 writeIntoCsvFile(filename='BFS_edge', header = ['from','to'],writenData=followingData)
 removeDuplicate('BFS_node_temp','BFS_node')

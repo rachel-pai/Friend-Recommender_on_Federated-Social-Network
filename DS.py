@@ -51,6 +51,6 @@ def getFollowing(iterateNum):
 
 followingData,nodes = getFollowing(10)
 
-writeIntoCsvFile(filename='SEC_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='SEC_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('SEC_node_temp','SEC_node')
+writeIntoCsvFile(filename='DS_node_temp', header = ['id','user','url'],writenData=nodes)
+writeIntoCsvFile(filename='DS_edge', header = ['from','to'],writenData=followingData)
+removeDuplicate('DS_node_temp','DS_node')

@@ -9,7 +9,7 @@ from operator import itemgetter
 from mastodon import Mastodon
 from queue import *
 from more_itertools import unique_everseen
-
+import copy
 class Node:
    def __init__(self,id):
       self.id = id
@@ -24,6 +24,8 @@ class Node:
          self.url = None
          self.followingCount = None
 
+   def copy(self):
+      return Node(self.id)
    def getFollowing(self):
       NodeList = []
       followingList = mastodon.account_following(self.id)
@@ -86,7 +88,5 @@ def getRandomlyUser(num):
       if vertice.name:
          break
    return vertice
-
-
 
 
