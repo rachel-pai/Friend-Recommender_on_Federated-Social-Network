@@ -19,8 +19,8 @@ def findNext(id,q,temp_ids,followingData,ids):
    print("come into find next function! ")
    neighbors = []
    temp_ids.append(vertice.id)
-   if vertice.id not in temp_ids:
-      ids.append({'id': vertice.id, 'user': vertice.name, 'url': vertice.url})
+   # if vertice.id not in temp_ids:
+   ids.append({'id': vertice.id, 'user': vertice.name, 'url': vertice.url})
    followingList = vertice.getFollowing()
    if len(followingList) > 0:
       for followingNode in followingList:
@@ -61,3 +61,5 @@ followingData,nodes = getFollowing(3)
 writeIntoCsvFile(filename='BFS_node_temp', header = ['id','user','url'],writenData=nodes)
 writeIntoCsvFile(filename='BFS_edge', header = ['from','to'],writenData=followingData)
 removeDuplicate('BFS_node_temp','BFS_node')
+
+addMissingNode('BFS_edge','BFS_node',header=['id','user','url'])

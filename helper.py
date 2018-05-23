@@ -10,28 +10,6 @@ from mastodon import Mastodon
 from queue import *
 from more_itertools import unique_everseen
 
-
-def writeIntoCsvFile(filename,header,writenData):
-   writeHead = True
-   if os.path.exists(filename+'.csv'):
-      writeHead = False
-   with open(filename+'.csv', 'a',newline='') as fileCsv:
-      header = header
-      writer = csv.DictWriter(fileCsv, delimiter=',', fieldnames=header)
-      if writeHead:
-         writer.writeheader()
-      for rawData in writenData:
-         writer.writerow(rawData)
-
-def removeDuplicate(fileTempName, fileName):
-   with open(fileTempName+'.csv', 'r') as in_file, open(fileName+'.csv', 'w') as out_file:
-      seen = set()  # set for fast O(1) amortized lookup
-      for line in in_file:
-         if line in seen: continue  # skip duplicate
-         seen.add(line)
-         out_file.write(line)
-
-
 class Node:
    def __init__(self,id):
       self.id = id
@@ -55,6 +33,52 @@ class Node:
    def getParent(self,id):
       self.parentID = id
 
+def writeIntoCsvFile(filename,header,writenData):
+   writeHead = True
+   if os.path.exists(filename+'.csv'):
+      writeHead = False
+   with open(filename+'.csv', 'a',newline='') as fileCsv:
+      header = header
+      writer = csv.DictWriter(fileCsv, delimiter=',', fieldnames=header)
+      if writeHead:
+         writer.writeheader()
+      for rawData in writenData:
+         writer.writerow(rawData)
+
+def removeDuplicate(fileTempName, fileName):
+   with open(fileTempName+'.csv', 'r') as in_file, open(fileName+'.csv', 'w') as out_file:
+      seen = set()  # set for fast O(1) amortized lookup
+      for line in in_file:
+         if line in seen: continue  # skip duplicate
+         seen.add(line)
+         out_file.write(line)
+
+
+def addMissingNode(edgeFile, nodeFile,header):
+   if os.path.exists(edgeFile+'.csv'):
+      with open(edgeFile+'.csv', 'rt', encoding='utf-8') as edgefile:
+         readCSV = csv.reader(edgefile, delimiter=',')
+         edgeId = [r for r in readCSV]
+         edgeId.pop(0)
+      edgeId = [r[0] for r in edgeId] + [r[1] for r in edgeId]
+      result = list(set(edgeId))
+
+   if os.path.exists(nodeFile+'.csv'):
+      with open(nodeFile+'.csv','rt',encoding='utf-8') as csvfile:
+         readCSV = csv.reader(csvfile, delimiter=',')
+         nodeId = [r[0] for r in readCSV]
+         nodeId.pop(0)
+      nodeId = list(set(nodeId))
+
+   missingIds = list(set(result)-set(nodeId))
+   ids =[]
+   for missingId in missingIds:
+      node_temp = Node(missingId)
+      ids.append({'id': node_temp.id, 'user': node_temp.name, 'url': node_temp.url})
+   if ids:
+      writeIntoCsvFile(nodeFile,header, ids)
+
+
 def getRandomlyUser(num):
    while True:
       randomUser = random.randint(1, num + 1)
@@ -62,6 +86,7 @@ def getRandomlyUser(num):
       if vertice.name:
          break
    return vertice
+
 
 
 

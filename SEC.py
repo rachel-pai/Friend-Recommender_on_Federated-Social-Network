@@ -1,7 +1,7 @@
 from userInfo import *
 from helper import *
 
-## SEC (sample edge count)
+## SEC (sample edge counát)
 # given the currently constructed sample S
 # how can we select a node v with the highest degree without having knowledfe of N?
 # the highest degree without having knowldege of N?
