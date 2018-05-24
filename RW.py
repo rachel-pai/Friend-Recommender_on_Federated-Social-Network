@@ -40,7 +40,7 @@ def getFollowing(iterateNum):
          break
    return followingData,ids
 
-for i in range(5):
+for i in range(2):
    followingData,nodes = getFollowing(300)
    writeIntoCsvFile(filename='RW_node_temp', header = ['id','user','url'],writenData=nodes)
    writeIntoCsvFile(filename='RW_edge', header = ['from','to'],writenData=followingData)
