@@ -40,7 +40,8 @@ def getFollowing(iterateNum):
          break
    return followingData,ids
 
-followingData,nodes = getFollowing(1000)
-writeIntoCsvFile(filename='RW_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='RW_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('RW_node_temp','RW_edge')
+for i in range(5):
+   followingData,nodes = getFollowing(300)
+   writeIntoCsvFile(filename='RW_node_temp', header = ['id','user','url'],writenData=nodes)
+   writeIntoCsvFile(filename='RW_edge', header = ['from','to'],writenData=followingData)
+   removeDuplicate('RW_node_temp','RW_node')

@@ -16,7 +16,7 @@ def getFollowing(num):
                   ids.append({'id':x.id,'user':x.name,'url':x.url})
    return followingData,ids
 
-followingData,nodes = getFollowing(50)
+followingData,nodes = getFollowing(100)
 
 writeIntoCsvFile(filename='RR_node_temp', header = ['id','user','url'],writenData=nodes)
 writeIntoCsvFile(filename='RR_edge', header = ['from','to'],writenData=followingData)
