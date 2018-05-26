@@ -2,7 +2,6 @@
 # Created by chen on 25/05/2018
 # email: q.chen@student.utwente.nl
 
-
 # import igraph
 from igraph import *
 import pandas

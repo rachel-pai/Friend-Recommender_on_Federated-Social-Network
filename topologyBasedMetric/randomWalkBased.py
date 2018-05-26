@@ -1,6 +1,6 @@
-#coding:utf-8
-#Created by chen on 25/05/2018
-#email: q.chen@student.utwente.nl
+# coding:utf-8
+# Created by chen on 25/05/2018
+# email: q.chen@student.utwente.nl
 
 # import igraph
 from igraph import *
@@ -76,8 +76,10 @@ g.delete_vertices(g.vs.select(_degree=0))
 class PrecalculatedStuff(object):
     def __init__(self, graph):
         self.graph = graph
-        self.degrees = graph.outdegree()
-        self.adjlist = list(map(set,graph.get_adjlist()))
+        self.outdegrees = graph.outdegree()
+        self.indegrees = graph.indegree()
+        self.adjlistOut = list(map(set,graph.get_adjlist()))
+        self.adjlistIn = list(map(set,graph.get_adjlist(mode=IN)))
         self.adjmatrix = np.matrix([graph.get_adjacency()[i] for i in range(len(graph.vs))])
         self.m = graph.ecount() #number of edges in the graph
         self.n = graph.vcount() # vertice number
@@ -100,33 +102,49 @@ class PrecalculatedStuff(object):
 
     # SimRank: SimRank is defined in a self-constraint way
     # according to the asssumption that two nodes are similar if they are connected to similar nods
-    def simRank(self, r=0.8, max_iter = 100, eps=1e-4):
+    # calculate simRank based on  outdegree
+    # regular simRank is based on indegree
+    def simRank(self, r=0.8, max_iter = 100, eps=1e-4,mode="out"):
         sim_prev = np.zeros(self.n)
         sim = np.identity(self.n)
         for i in range(max_iter):
             if np.allclose(sim,sim_prev,atol=eps): # iterate until converge
                 break
             sim_prev = np.copy(sim)
-            # for u,v in itertools.product(self.n,self.n):
-            for u in range(self.n):
-                for v in range(self.n):
-                    print("u nad v is", u, v)
-                    if u == v:  # if u and v is equal return 1
-                        continue
-                    s_uv = 0.0
-                    if self.degrees[u] == 0 or self.degrees[v] == 0:
-                        sim[u][v] = 0
-                    else:
-                        # for neighbor_u in self.adjlist[u]:
-                        #     for neighbor_v in self.adjlist[v]:
-                        #         s_uv += sim_prev[neighbor_u][neighbor_v]
-                        s_uv = sum([sim_prev[neighbor_u][neighbor_v] for neighbor_u,neighbor_v in itertools.product(self.adjlist[u],self.adjlist[v])])
-                        sim[u][v] = (r * s_uv) / (self.degrees[u]*self.degrees[v])
+            if mode == "out":
+                for u in range(self.n):
+                    for v in range(self.n):
+                        if u == v:  # if u and v is equal return 1
+                            continue
+                        if self.outdegrees[u] == 0 or self.outdegrees[v] == 0:
+                            sim[u][v] = 0
+                        else:
+                            s_uv = sum([sim_prev[neighbor_u][neighbor_v] for neighbor_u,neighbor_v in itertools.product(self.adjlistOut[u],self.adjlistOut[v])])
+                            sim[u][v] = (r * s_uv) / (self.outdegrees[u]*self.outdegrees[v])
+            elif mode == "in":
+                for u in range(self.n):
+                    for v in range(self.n):
+                        if u == v:  # if u and v is equal return 1
+                            continue
+                        if self.indegrees[u] == 0 or self.indegrees[v] == 0:
+                            sim[u][v] = 0
+                        else:
+                            s_uv = sum([sim_prev[neighbor_u][neighbor_v] for neighbor_u, neighbor_v in itertools.product(self.adjlistIn[u],self.adjlistIn[v])])
+                            sim[u][v] = (r * s_uv) / (self.indegrees[u]*self.indegrees[v])
         return sim
+
+    # rooted PageRank (RPR): Rooted PageRank is a modification of PageRank,
+    # the rank of a node in graph is proportiaonl to the probabilityu taht the node wil be reached through a random walk on the graph
+    def RPR(self,factor=0.5):
+        D_inv = np.diag(1./np.array([max(x,1) for x in self.outdegrees]))
+        return (1-factor)*(np.linalg.inv(np.identity(self.n) - D_inv.dot(self.adjmatrix)))
+
 
 
 # print(g.vcount())
 # print(g.ecount())
-prede = PrecalculatedStuff(g)
-sim = prede.simRank()
-print(sim)
+# prede = PrecalculatedStuff(g)
+# sim = prede.simRank()
+# print(sim)
+# print(prede.outdegrees)
+# D = np.diag(1./np.array([max(x,1) for x in prede.outdegrees]))
