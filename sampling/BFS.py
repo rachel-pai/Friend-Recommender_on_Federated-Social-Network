@@ -1,3 +1,6 @@
+# coding:utf-8
+# Created by chen on 22/05/2018
+# email: q.chen@student.utwente.nl
 from userInfo import *
 from helper import *
 # BFS: breadth first search
@@ -56,11 +59,11 @@ def getFollowing(num):
                break
    return followingData,ids
 
-followingData,nodes = getFollowing(3)
+followingData,nodes = getFollowing(1)
 
 
-writeIntoCsvFile(filename='BFS_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='BFS_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('BFS_node_temp','BFS_node')
+writeIntoCsvFile(filename='../data/BFS_node_temp', header = ['id','user','url'],writenData=nodes)
+writeIntoCsvFile(filename='../data/BFS_edge', header = ['from','to'],writenData=followingData)
+removeDuplicate('../data/BFS_node_temp','../data/BFS_node')
 
-addMissingNode('BFS_edge','BFS_node',header=['id','user','url'])
+addMissingNode('../data/BFS_edge','../data/BFS_node',header=['id','user','url'])

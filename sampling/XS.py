@@ -1,3 +1,7 @@
+# coding:utf-8
+# Created by chen on 24/05/2018
+# email: q.chen@student.utwente.nl
+
 from userInfo import *
 from helper import *
 
@@ -46,8 +50,9 @@ def getFollowing(iterateNum):
          nextId, temp_ids, followingData, ids = findNext(nextId,temp_ids,followingData,ids)
    return followingData,ids
 
-followingData,nodes = getFollowing(3)
-writeIntoCsvFile(filename='XS_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='XS_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('XS_node_temp','XS_node')
-addMissingNode('XS_edge','XS_node',header=['id','user','url'])
+for i in range(10):
+    followingData,nodes = getFollowing(3)
+writeIntoCsvFile(filename='../data/XS_node_temp', header = ['id','user','url'],writenData=nodes)
+writeIntoCsvFile(filename='../data/XS_edge', header = ['from','to'],writenData=followingData)
+removeDuplicate('../data/XS_node_temp','../data/XS_node')
+addMissingNode('../data/XS_edge','../data/XS_node',header=['id','user','url'])

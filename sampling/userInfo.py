@@ -1,3 +1,7 @@
+# coding:utf-8
+# Created by chen on 22/05/2018
+# email: q.chen@student.utwente.nl
+
 # rachel0831@mstdn.jp
 from mastodon import Mastodon
 

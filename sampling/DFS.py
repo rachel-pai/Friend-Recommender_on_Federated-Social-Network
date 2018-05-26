@@ -1,3 +1,6 @@
+# coding:utf-8
+# Created by chen on 22/05/2018
+# email: q.chen@student.utwente.nl
 from userInfo import *
 from helper import *
 ## DFS (depth-first search)
@@ -37,10 +40,15 @@ def findNext(id,temp_ids,followingData,ids):
    followingLIst = vertice.getFollowing()
    followinglistId = [x.id for x in followingLIst]
    unvisitedNodes = list(set(followinglistId) - set(temp_ids))
+   if unvisitedNodes:
+      followingLIst = vertice.getFollowing()
+      followinglistId = [x.id for x in followingLIst]
+      unvisitedNodes = list(set(followinglistId) - set(temp_ids))
 
-   followingItem = Node(random.choice(unvisitedNodes))   # randomly choosen unvisited nodes
-   followingItem.getParent(vertice.id)
-
+      followingItem = Node(random.choice(unvisitedNodes))   # randomly choosen unvisited nodes
+      followingItem.getParent(vertice.id)
+   else:
+      return 0, temp_ids, followingData, ids
    if len(followingItem.getFollowing()) == 0:
       # if the following node doenst have any children, we put its parente as the next iterate starting node
       nextId = followingItem.parentID
@@ -67,9 +75,10 @@ def getFollowing(iterateNum):
          nextId, temp_ids, followingData, ids = findNext(nextId,temp_ids,followingData,ids)
    return followingData,ids
 
-followingData,nodes = getFollowing(50)
+followingData,nodes = getFollowing(5)
+#
+writeIntoCsvFile(filename='../data/DFS_node_temp', header = ['id','user','url'],writenData=nodes)
+writeIntoCsvFile(filename='../data/DFS_edge', header = ['from','to'],writenData=followingData)
+removeDuplicate('../data/DFS_node_temp','../data/DFS_node')
+addMissingNode('../data/DFS_edge','../data/DFS_node',header=['id','user','url'])
 
-writeIntoCsvFile(filename='DFS_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='DFS_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('DFS_node_temp','DFS_node')
-addMissingNode('DFS_edge','DFS_node',header=['id','user','url'])

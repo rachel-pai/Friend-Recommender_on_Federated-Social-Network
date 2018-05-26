@@ -1,3 +1,7 @@
+# coding:utf-8
+# Created by chen on 22/05/2018
+# email: q.chen@student.utwente.nl
+
 from userInfo import *
 from helper import *
 # random walk (RW)
@@ -40,8 +44,8 @@ def getFollowing(iterateNum):
          break
    return followingData,ids
 
-for i in range(2):
+for i in range(1):
    followingData,nodes = getFollowing(300)
-   writeIntoCsvFile(filename='RW_node_temp', header = ['id','user','url'],writenData=nodes)
-   writeIntoCsvFile(filename='RW_edge', header = ['from','to'],writenData=followingData)
-   removeDuplicate('RW_node_temp','RW_node')
+   writeIntoCsvFile(filename='../data/RW_node_temp', header = ['id','user','url'],writenData=nodes)
+   writeIntoCsvFile(filename='../data/RW_edge', header = ['from','to'],writenData=followingData)
+   removeDuplicate('../data/RW_node_temp','../data/RW_node')

@@ -1,3 +1,7 @@
+# coding:utf-8
+# Created by chen on 22/05/2018
+# email: q.chen@student.utwente.nl
+
 from userInfo import *
 from helper import *
 # randomly choose nodes without any rule
@@ -18,6 +22,6 @@ def getFollowing(num):
 
 followingData,nodes = getFollowing(100)
 
-writeIntoCsvFile(filename='RR_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='RR_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('RR_node_temp','RR_node')
+writeIntoCsvFile(filename='../data/RR_node_temp', header = ['id','user','url'],writenData=nodes)
+writeIntoCsvFile(filename='../data/RR_edge', header = ['from','to'],writenData=followingData)
+removeDuplicate('../data/RR_node_temp','../data/RR_node')

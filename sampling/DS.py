@@ -1,3 +1,6 @@
+# coding:utf-8
+# Created by chen on 24/05/2018
+# email: q.chen@student.utwente.nl
 from userInfo import *
 from helper import *
 
@@ -51,6 +54,6 @@ def getFollowing(iterateNum):
 
 followingData,nodes = getFollowing(10)
 
-writeIntoCsvFile(filename='DS_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='DS_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('DS_node_temp','DS_node')
+writeIntoCsvFile(filename='../data/DS_node_temp', header = ['id','user','url'],writenData=nodes)
+writeIntoCsvFile(filename='../data/DS_edge', header = ['from','to'],writenData=followingData)
+removeDuplicate('../data/DS_node_temp','../data/DS_node')
