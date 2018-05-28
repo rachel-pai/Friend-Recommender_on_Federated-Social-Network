@@ -13,13 +13,10 @@ from helper import *
 
 def findNext(id,q,temp_ids,followingData,ids):
    if id == 0:
-      while True:
-         vertice = getRandomlyUser(user_count)
-         if vertice.followingCount:
-            break
+       vertice = getRandomlyUser(user_count)
    else:
       vertice = Node(id)
-   print("come into find next function! ")
+
    neighbors = []
    temp_ids.append(vertice.id)
    # if vertice.id not in temp_ids:
@@ -52,7 +49,6 @@ def getFollowing(num):
          while True:
             try:
                item = old_q.get(block=False)
-               print("try item in queue")
                for id in item:
                   q,temp_ids,followingData,ids = findNext(id,q,temp_ids,followingData,ids)
             except Empty:
@@ -65,5 +61,4 @@ followingData,nodes = getFollowing(1)
 writeIntoCsvFile(filename='../data/BFS_node_temp', header = ['id','user','url'],writenData=nodes)
 writeIntoCsvFile(filename='../data/BFS_edge', header = ['from','to'],writenData=followingData)
 removeDuplicate('../data/BFS_node_temp','../data/BFS_node')
-
 addMissingNode('../data/BFS_edge','../data/BFS_node',header=['id','user','url'])

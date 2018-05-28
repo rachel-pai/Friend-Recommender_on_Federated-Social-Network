@@ -19,6 +19,8 @@ def mergeCSVs(fileName1, fileName2, mergedFileName):
 #
 # mergeCSVs("RW_edge","RW_edge2","RW_edge")
 # mergeCSVs("RW_node","RW_node2","RW_node")
-mergeCSVs("BFS_edge","BFS_edge2","BFS_edge")
-mergeCSVs("BFS_node","BFS_node2","BFS_node")
+# mergeCSVs("DFS_edge","BFS_edge","all_edge")
+# mergeCSVs("DFS_node","BFS_node","all_node")
+
+# mergeCSVs("DFS_node_temp1","DFS_node_temp2","DFS_node5")
 

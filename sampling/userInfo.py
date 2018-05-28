@@ -7,7 +7,7 @@ from mastodon import Mastodon
 
 
 # Register app - only once!
-#
+
 # Mastodon.create_app(
 #      'pytooterapp',
 #      api_base_url = 'https://mstdn.jp',
