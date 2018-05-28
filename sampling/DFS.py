@@ -69,4 +69,4 @@ def getFollowing(iterateNum):
 # writeIntoCsvFile(filename='../data/DFS_node_temp', header=['id', 'user', 'url'], writenData=nodes)
 # writeIntoCsvFile(filename='../data/DFS_edge', header=['from', 'to'], writenData=followingData)
 # removeDuplicate('../data/DFS_node_temp', '../data/DFS_node')
-addMissingNode('../data/DFS_edge', '../data/DFS_node', header=['id', 'user', 'url'])
+addMissingNode('../data/all_edge', '../data/all_node', header=['id', 'user', 'url'])

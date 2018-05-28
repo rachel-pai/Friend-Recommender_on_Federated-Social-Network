@@ -1,0 +1,150 @@
+*Vertices 72
+1 "1" url "https://pawoo.net/@mnpq22nplb2cyabb"
+2 "2" url "https://mstdn.jp/@Orafu"
+3 "3" url "https://pawoo.net/@mnp14pvpabb"
+4 "4" url "https://pawoo.net/@mnp1j344abb"
+5 "5" url "https://pawoo.net/@mnp2jz1a1tvu1abb"
+6 "6" url "https://pawoo.net/@mnpdkv444tdjuabb"
+7 "7" url "https://mstdn.jp/@chami_chami"
+8 "8" url "https://mstdn.fm/@Dansa"
+9 "9" url "https://mstdn.jp/@okanpo"
+10 "10" url "https://mstdn.jp/@382"
+11 "11" url "https://pawoo.net/@mnp43yo1zm4vmabb"
+12 "12" url "https://vocalodon.net/@RT_GoBS"
+13 "13" url "https://mastodon.juggler.jp/@kr"
+14 "14" url "https://friends.nico/@mimizuku39"
+15 "15" url "https://mimumedon.com/@hattipottipatti"
+16 "16" url "https://friends.nico/@negipan"
+17 "17" url "https://flower.afn.social/@bosel"
+18 "18" url "https://mimumedon.com/@MORI"
+19 "19" url "https://friends.nico/@mousong"
+20 "20" url "https://friends.nico/@_tofu"
+21 "21" url "https://saigodon.jp/@kaya"
+22 "22" url "https://mstdn.jp/@msbt_ss"
+23 "23" url "https://mimumedon.com/@GaibRarecoil"
+24 "24" url "https://mstdn.jp/@ririneko"
+25 "25" url "https://mstdn.jp/@byakuroku"
+26 "26" url "https://mstdn.jp/@annuifok"
+27 "27" url "https://mstdn.jp/@nabe_0310"
+28 "28" url "https://mstdn.jp/@mystdn"
+29 "29" url "https://pawoo.net/@26_anikun"
+30 "30" url "https://mstdn.kemono-friends.info/@worker_si"
+31 "31" url "https://pawoo.net/@setuzokusettei"
+32 "32" url "https://vocalodon.net/@LUKANAN_P"
+33 "33" url "https://mstdn.jp/@imokenpy"
+34 "34" url "https://mstdn.jp/@TENGU"
+35 "35" url "https://pawoo.net/@mnpwfqrx3ykaqabb"
+36 "36" url "https://pawoo.net/@mnpg11umabb"
+37 "37" url "https://pawoo.net/@mnpb1q442443qabb"
+38 "38" url "https://pawoo.net/@mnp34ogksd2q3abb"
+39 "39" url "https://pawoo.net/@mnp112git1u1fabb"
+40 "40" url "https://pawoo.net/@mnp4hn3tfvqtgabb"
+41 "41" url "https://pawoo.net/@mnpp2zbx4xl44abb"
+42 "42" url "https://pawoo.net/@mnp4cxhqk1rxeabb"
+43 "43" url "https://pawoo.net/@mnpyq231d3p33abb"
+44 "44" url "https://pawoo.net/@mnpserz1g243wabb"
+45 "45" url "https://pawoo.net/@mnp1g41e31y42abb"
+46 "46" url "https://pawoo.net/@mnpnu3432u12nabb"
+47 "47" url "https://pawoo.net/@mnpa311bm1shrabb"
+48 "48" url "https://pawoo.net/@mnpmuz442h4xtabb"
+49 "49" url "https://pawoo.net/@mnpp2tm4o11heabb"
+50 "50" url "https://pawoo.net/@mnp4k4xlyn2tsabb"
+51 "51" url "https://pawoo.net/@mnph2q414dshqabb"
+52 "52" url "https://pawoo.net/@mnpiy13v33smlabb"
+53 "53" url "https://pawoo.net/@mnp31v22woez1abb"
+54 "54" url "https://pawoo.net/@mnpyqry1i24jhabb"
+55 "55" url "https://pawoo.net/@mnp4jvsto3opdabb"
+56 "56" url "https://pawoo.net/@mnppmppib1ix2abb"
+57 "57" url "https://pawoo.net/@mnpb4g43li2r1abb"
+58 "58" url "https://pawoo.net/@mnpazbhtd2y2iabb"
+59 "59" url "https://pawoo.net/@mnpisqi3bd1yeabb"
+60 "60" url "https://pawoo.net/@mnpz1u2b42y1oabb"
+61 "61" url "https://pawoo.net/@mnpcc22vsap43abb"
+62 "62" url "https://pawoo.net/@mnpmbp42c2li2abb"
+63 "63" url "https://pawoo.net/@mnpy4ktdy2gfpabb"
+64 "64" url "https://pawoo.net/@mnpn1ojnk32stabb"
+65 "65" url "https://pawoo.net/@mnplo33aohg3iabb"
+66 "66" url "https://pawoo.net/@mnpe4t4i4t1s3abb"
+67 "67" url "https://pawoo.net/@mnp4242e1awrnabb"
+68 "68" url "https://pawoo.net/@mnp32cjw4b141abb"
+69 "69" url "https://pawoo.net/@mnpp1sk31v21cabb"
+70 "70" url "https://pawoo.net/@mnpxt113wdk1pabb"
+71 "71" url "https://pawoo.net/@mnpkbrtws44f3abb"
+72 "72" url "https://pawoo.net/@mnp21pc311k3aabb"
+*Arcs
+1 2
+2 7
+2 8
+2 9
+2 10
+2 12
+2 13
+2 14
+2 15
+2 16
+2 17
+2 18
+2 19
+2 20
+2 21
+2 22
+2 23
+2 24
+2 25
+2 26
+2 27
+2 28
+2 29
+2 30
+2 31
+3 2
+4 2
+5 2
+6 2
+8 2
+11 2
+16 2
+20 2
+22 32
+22 33
+22 34
+24 2
+27 2
+35 2
+36 2
+37 2
+38 2
+39 2
+40 2
+41 2
+42 2
+43 2
+44 2
+45 2
+46 2
+47 2
+48 2
+49 2
+50 2
+51 2
+52 2
+53 2
+54 2
+55 2
+56 2
+57 2
+58 2
+59 2
+60 2
+61 2
+62 2
+63 2
+64 2
+65 2
+66 2
+67 2
+68 2
+69 2
+70 2
+71 2
+72 2
