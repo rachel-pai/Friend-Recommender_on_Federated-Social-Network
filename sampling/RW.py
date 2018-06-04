@@ -48,8 +48,8 @@ def getFollowing(iterateNum):
     return followingData, ids
 
 
-for i in range(1):
-    followingData, nodes = getFollowing(300)
+for i in range(2):
+    followingData, nodes = getFollowing(100)
     writeIntoCsvFile(filename='../data/RW_node_temp', header=['id', 'user', 'url'], writenData=nodes)
     writeIntoCsvFile(filename='../data/RW_edge', header=['from', 'to'], writenData=followingData)
     removeDuplicate('../data/RW_node_temp', '../data/RW_node')

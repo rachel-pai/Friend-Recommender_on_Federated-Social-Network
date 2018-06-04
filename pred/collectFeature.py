@@ -7,6 +7,7 @@
 # email: q.chen@student.utwente.nl
 
 # find clusteriing of data
+import louvain
 
 def collectFeature(graph,cID):
     '''
@@ -100,17 +101,19 @@ infomap_clutsers = g.community_infomap()
 clusters = infomap_clutsers.subgraphs()
 # save clusters into csv files
 # run once time
-# for n,graphs in enumerate(clusters):
-#     if graphs.vcount() > 50:
-#         if graphs.vcount() > 500:
-#             # different with community_edge_betweenness()
-#             subsubgraph = graphs.community_walktrap().as_clustering()
-#             subsubgraphs = subsubgraph.subgraphs()
-#             for c,subsubgraph in enumerate(subsubgraphs):
-#                 if subsubgraph.vcount() > 50:
-#                     subsubgraph.save('../pred/cluster/cluster_sub_'+str(c)+'.net')
-#         else:
-#             graphs.save('../pred/cluster/cluster_' + str(n) + '.net')
+for n,graphs in enumerate(clusters):
+    if graphs.vcount() > 50:
+        if graphs.vcount() > 500:
+            # different with community_edge_betweenness()
+            # subsubgraph = graphs.community_walktrap().as_clustering()
+            # subsubgraph = graphs.community_infomap()
+            subsubgraph = louvain.find_partition(graphs, louvain.ModularityVertexPartition)
+            subsubgraphs = subsubgraph.subgraphs()
+            for c,subsubgraph in enumerate(subsubgraphs):
+                if subsubgraph.vcount() > 50:
+                    subsubgraph.save('../pred/cluster/cluster_sub_'+str(c)+'.net')
+        else:
+            graphs.save('../pred/cluster/cluster_' + str(n) + '.net')
 
 
 graphsList = []

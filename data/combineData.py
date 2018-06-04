@@ -14,13 +14,11 @@ def mergeCSVs(fileName1, fileName2, mergedFileName):
     # print(merged.head(10))
     merged.to_csv(mergedFileName+ ".csv", index=False)
 
-# mergeCSVs("DFS_edge","DFS_edge2","DFS_edge")
+# DFS, BFS, RW, RR, DS
+# mergeCSVs("node1","anode4","node")
+# mergeCSVs("DFS_node1","DS_node1","node1")
+# mergeCSVs("DFS_edge1","DS_edge1","edge1")
+
 # mergeCSVs("DFS_node_temp","DFS_node2","DFS_node")
-#
-# mergeCSVs("RW_edge","RW_edge2","RW_edge")
-# mergeCSVs("RW_node","RW_node2","RW_node")
-# BFS, DFS,RW, RR, DS
-
-
 
 

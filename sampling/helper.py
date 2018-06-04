@@ -14,7 +14,7 @@ from mastodon import Mastodon
 from queue import *
 from more_itertools import unique_everseen
 import copy
-
+import pandas as pd
 
 class Node(object):
     def __init__(self, id):
@@ -100,3 +100,45 @@ def getRandomlyUser(num):
         if vertice.name:
             break
     return vertice
+
+def addmisingedges(edgeFileName, nodeFileName):
+    RWnode = pd.read_csv('../data/'+edgeFileName)
+    newdf = RWnode.drop_duplicates()
+    findnode = pd.read_csv('../data/'+nodeFileName)
+    # findnode = findnode('id')
+    # newdf = RWnode.drop_duplicates('id')
+    # newdf.to_csv('../data/RR_node.csv',index=False)
+    missingIds = list(set(newdf['from']) - set(findnode['id']))
+    print("missing form",missingIds)
+    for missingId in missingIds:
+        node_temp = Node(missingId)
+        findnode = findnode.append({'id': node_temp.id, 'user': node_temp.name, 'url': node_temp.url},ignore_index=True)
+
+    missingIds = list((set(newdf['to'])) - set(findnode['id']))
+    print("missing to",missingIds)
+    for missingId in missingIds:
+        node_temp = Node(missingId)
+        findnode = findnode.append({'id': node_temp.id, 'user': node_temp.name, 'url': node_temp.url},
+                                   ignore_index=True)
+    return findnode
+
+
+
+# removeDuplicate('../data/DS_node','../data/DS_node2')
+
+# addmisingedges('BFS_edge.csv','BFS_node.csv')
+# addmisingedges('RR_edge.csv','RR_node.csv')
+findnode = addmisingedges('DFS_edge.csv','DFS_node.csv')
+findnode['id'].astype(int)
+findnode.to_csv('../data/DFS_node.csv', index=False)
+
+# RWnode = pd.read_csv('../data/BFS_node.csv',index_col=0)
+# RWnode.to_csv('../data/BFS_node.csv',index=False)
+#
+# RWnode = pd.read_csv('../data/DFS_node.csv',index_col=0)
+# RWnode.to_csv('../data/DFS_node.csv',index=False)
+
+# addMissingNode('../data/BFS_edge','../data/BFS_node',header=['id','user','url'])
+RWnode = pd.read_csv('../data/anode.csv')
+newdf = RWnode.drop_duplicates('id')
+newdf.to_csv('../data/anode.csv',index=False)

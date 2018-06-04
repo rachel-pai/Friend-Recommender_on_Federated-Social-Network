@@ -20,8 +20,8 @@ def getFollowing(num):
                   ids.append({'id':x.id,'user':x.name,'url':x.url})
    return followingData,ids
 
-followingData,nodes = getFollowing(100)
-
-writeIntoCsvFile(filename='../data/RR_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='../data/RR_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('../data/RR_node_temp','../data/RR_node')
+for i in range(3):
+   followingData,nodes = getFollowing(50)
+   writeIntoCsvFile(filename='../data/RR_node_temp', header = ['id','user','url'],writenData=nodes)
+   writeIntoCsvFile(filename='../data/RR_edge', header = ['from','to'],writenData=followingData)
+   # removeDuplicate('../data/RR_node_temp','../data/RR_node')

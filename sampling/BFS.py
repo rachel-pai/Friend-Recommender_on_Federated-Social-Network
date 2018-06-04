@@ -55,10 +55,10 @@ def getFollowing(num):
                break
    return followingData,ids
 
-followingData,nodes = getFollowing(1)
-
-
-writeIntoCsvFile(filename='../data/BFS_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='../data/BFS_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('../data/BFS_node_temp','../data/BFS_node')
-addMissingNode('../data/BFS_edge','../data/BFS_node',header=['id','user','url'])
+for i in range(3):
+   print("coming")
+   followingData,nodes = getFollowing(2)
+   writeIntoCsvFile(filename='../data/BFS_node_temp', header = ['id','user','url'],writenData=nodes)
+   writeIntoCsvFile(filename='../data/BFS_edge', header = ['from','to'],writenData=followingData)
+   removeDuplicate('../data/BFS_node_temp','../data/BFS_node')
+# addMissingNode('../data/BFS_edge','../data/BFS_node',header=['id','user','url'])

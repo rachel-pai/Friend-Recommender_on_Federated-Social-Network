@@ -1,0 +1,105 @@
+*Vertices 51
+1 "1" url "https://social.hyuki.net/@hyuki"
+2 "2" url "https://mstdn.jp/@clnmm"
+3 "3" url "https://mstdn.jp/@shi3z"
+4 "4" url "https://otajodon.com/@pollyanna"
+5 "5" url "https://mstdn.jp/@ponzoo"
+6 "6" url "https://mstdn.jp/@yhlee"
+7 "7" url "https://pawoo.net/@merec0"
+8 "8" url "https://pawoo.net/@yuco"
+9 "9" url "https://mstdn.jp/@contractio"
+10 "10" url "https://mastodon.cloud/@tsuda"
+11 "11" url "https://mstdn.jp/@yomoyomo"
+12 "12" url "https://mstdn.jp/@rna"
+13 "13" url "https://mstdn.jp/@smasuda"
+14 "14" url "https://mastodon.cloud/@sociologbook"
+15 "15" url "https://mstdn.jp/@mizchi"
+16 "16" url "https://mstdn.jp/@dritoshi"
+17 "17" url "https://mstdn.guru/@otsune"
+18 "18" url "https://mstdn.jp/@wslash"
+19 "19" url "https://friends.nico/@nullkal"
+20 "20" url "https://mstdn-workers.com/@vitaone"
+21 "21" url "https://mstdn.jp/@ono_matope"
+22 "22" url "https://mstdn.jp/@iwaokimura"
+23 "23" url "https://mstdn.jp/@kohske"
+24 "24" url "https://m.okadajp.org/@kohske"
+25 "25" url "https://mstdn.jp/@ockeghem"
+26 "26" url "https://friends.nico/@friends_nico"
+27 "27" url "https://pawoo.net/@pawoo_support"
+28 "28" url "https://mastodon.social/@Support"
+29 "29" url "https://mstdn.jp/@sjm"
+30 "30" url "https://tuner.1242.com/@yoppy"
+31 "31" url "https://mstdn.jp/@sakato"
+32 "32" url "https://mstdn.jp/@kskktk"
+33 "33" url "https://horiedon.com/@takapon_jp"
+34 "34" url "https://mstdn.jp/@mshk"
+35 "35" url "https://mstdn.jp/@tkm0125"
+36 "36" url "https://pawoo.net/@suteaka"
+37 "37" url "https://mstdn.jp/@Isaak_S"
+38 "38" url "https://mstdn.jp/@meh"
+39 "39" url "https://mstdn.jp/@myrmecoleon"
+40 "40" url "https://mstdn.jp/@starship1996"
+41 "41" url "https://mstdn.jp/@siritori"
+42 "42" url "https://mstdn.jp/@shin_ichiro"
+43 "43" url "https://mstdn.jp/@qubeley"
+44 "44" url "https://mstdn.jp/@koizuka"
+45 "45" url "https://mstdn.jp/@heikin"
+46 "46" url "https://mstdn.jp/@noboruhi"
+47 "47" url "https://mstdn.jp/@kawauso3"
+48 "48" url "https://mstdn.jp/@raydive"
+49 "49" url "https://mstdn.jp/@banraidou"
+50 "50" url "https://mstdn.jp/@engawa_01"
+51 "51" url "https://mstdn.jp/@michi_vv"
+*Arcs
+2 3
+2 4
+2 5
+2 6
+2 7
+2 8
+2 9
+2 10
+2 11
+2 12
+2 13
+2 14
+16 1
+16 17
+16 18
+16 19
+16 20
+16 21
+16 22
+16 23
+16 24
+16 25
+16 26
+16 27
+16 28
+29 26
+29 27
+29 30
+31 10
+31 32
+31 33
+31 34
+31 35
+36 11
+36 13
+36 15
+36 18
+36 37
+36 38
+36 39
+36 40
+36 41
+36 42
+36 43
+36 44
+36 45
+36 46
+36 47
+36 48
+36 49
+36 50
+36 51

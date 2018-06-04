@@ -1,0 +1,130 @@
+*Vertices 63
+1 "1" url "https://pawoo.net/@227"
+2 "2" url "https://mstdn.jp/@kazu8581"
+3 "3" url "https://mstdn.jp/@muhera"
+4 "4" url "https://mstdn.jp/@1kk0date"
+5 "5" url "https://mstdn.jp/@natsuyama"
+6 "6" url "https://mstdn.jp/@sisyo"
+7 "7" url "https://mstdn.jp/@rcm"
+8 "8" url "https://mstdn.jp/@fiasco_monolit"
+9 "9" url "https://mstdn.jp/@aarch64"
+10 "10" url "https://mstdn.jp/@jailbreaker"
+11 "11" url "https://mstdn.jp/@YZ34u"
+12 "12" url "https://mstdn.jp/@rum_da"
+13 "13" url "https://mstdn.jp/@yukki_"
+14 "14" url "https://mstdn.jp/@Hayasaku"
+15 "15" url "https://mstdn.jp/@Iorin0225"
+16 "16" url "https://mstdn.jp/@yamayama"
+17 "17" url "https://mstdn.jp/@KishiTheMechanic"
+18 "18" url "https://mstdn.jp/@miishi"
+19 "19" url "https://mstdn.jp/@ktata"
+20 "20" url "https://mstdn.jp/@kira4679"
+21 "21" url "https://mstdn.jp/@fratelli_darmi"
+22 "22" url "https://mstdn.jp/@ooma11"
+23 "23" url "https://mstdn.jp/@iijk17"
+24 "24" url "https://mstdn.jp/@SEMI114514"
+25 "25" url "https://mstdn.jp/@nontel"
+26 "26" url "https://mstdn.jp/@Hika1001"
+27 "27" url "https://mstdn.jp/@swallowlike"
+28 "28" url "https://mstdn.jp/@melfis"
+29 "29" url "https://mstdn.jp/@kenyo"
+30 "30" url "https://mstdn.jp/@mane_laundering"
+31 "31" url "https://mstdn.jp/@itsukamiki"
+32 "32" url "https://imastodon.net/@funnnon"
+33 "33" url "https://mstdn.jp/@RGrey_tacet"
+34 "34" url "https://mstdn.jp/@funnnon"
+35 "35" url "https://mstdn.jp/@eii2"
+36 "36" url "https://imastodon.net/@kzk"
+37 "37" url "https://mstdn.jp/@pillows11gotr"
+38 "38" url "https://mstdn.jp/@mlny"
+39 "39" url "https://mstdn.jp/@CF_3rd"
+40 "40" url "https://mstdn.jp/@cherisan_kakari"
+41 "41" url "https://mstdn.jp/@pinkmiruku"
+42 "42" url "https://mstdn.jp/@Kwk"
+43 "43" url "https://mstdn.jp/@kairo57"
+44 "44" url "https://mstdn.jp/@chamex2"
+45 "45" url "https://mstdn.jp/@flipflop"
+46 "46" url "https://mstdn.jp/@shiranui_ryo"
+47 "47" url "https://mstdn.jp/@ryokooooooon"
+48 "48" url "https://mstdn.jp/@pori2no2"
+49 "49" url "https://mstdn.jp/@_us0"
+50 "50" url "https://mstdn.jp/@yadorigi"
+51 "51" url "https://mstdn.jp/@Chal"
+52 "52" url "https://mstdn.jp/@hide_tgz"
+53 "53" url "https://now.kibousoft.co.jp/@annotunzdy"
+54 "54" url "https://mstdn.jp/@tskytk"
+55 "55" url "https://mstdn.jp/@Alicexvl"
+56 "56" url "https://mstdn.jp/@negatibot"
+57 "57" url "https://mstdn.jp/@HYAK"
+58 "58" url "https://mstdn.jp/@Back2Sleep"
+59 "59" url "https://mstdn.jp/@gp01"
+60 "60" url "https://mstdn.jp/@kinocolate"
+61 "61" url "https://mstdn.jp/@Bonelesshamtarosan"
+62 "62" url "https://mstdn.jp/@nanairo7724"
+63 "63" url "https://mstdn.jp/@_okioka"
+*Arcs
+1 2
+1 3
+1 4
+1 5
+1 6
+1 7
+1 8
+1 9
+1 10
+1 11
+1 12
+1 13
+1 14
+1 15
+1 16
+1 17
+1 18
+1 19
+1 20
+1 21
+1 22
+1 23
+32 28
+32 33
+32 34
+36 13
+36 14
+36 26
+36 27
+36 28
+36 33
+36 35
+36 37
+36 38
+36 39
+36 40
+36 41
+36 42
+36 43
+36 44
+36 45
+36 46
+36 47
+36 48
+36 49
+36 50
+36 51
+36 52
+53 4
+53 24
+53 25
+53 29
+53 30
+53 31
+53 43
+53 54
+53 55
+53 56
+53 57
+53 58
+53 59
+53 60
+53 61
+53 62
+53 63

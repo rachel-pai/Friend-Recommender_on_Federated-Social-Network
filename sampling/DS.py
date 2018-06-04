@@ -52,7 +52,19 @@ def getFollowing(iterateNum):
          nextId, temp_ids, followingData, ids = findNext(nextId,temp_ids,followingData,ids)
    return followingData,ids
 
-followingData,nodes = getFollowing(10)
-writeIntoCsvFile(filename='../data/DS_node_temp', header = ['id','user','url'],writenData=nodes)
-writeIntoCsvFile(filename='../data/DS_edge', header = ['from','to'],writenData=followingData)
-removeDuplicate('../data/DS_node_temp','../data/DS_node')
+for i in range(3):
+    followingData,nodes = getFollowing(50)
+    writeIntoCsvFile(filename='../data/DS_node_temp', header = ['id','user','url'],writenData=nodes)
+    writeIntoCsvFile(filename='../data/DS_edge', header = ['from','to'],writenData=followingData)
+    removeDuplicate('../data/DS_node_temp','../data/DS_node')
+
+# removeDuplicate('../data/DFS_edge','../data/DFS_edge1')
+# removeDuplicate('../data/BFS_edge','../data/BFS_edge1')
+# removeDuplicate('../data/DS_edge','../data/DS_edge1')
+# removeDuplicate('../data/RW_edge','../data/RW_edge1')
+
+# addMissingNode('../data/BFS_edge','../data/BFS_node',header=['id','user','url'])
+# addMissingNode('../data/DFS_edge','../data/DFS_node',header=['id','user','url'])
+addMissingNode('../data/RR_edge','../data/RR_node',header=['id','user','url'])
+# addMissingNode('../data/RW_edge','../data/RW_node',header=['id','user','url'])
+# addMissingNode('../data/DS_edge','../data/DS_node',header=['id','user','url'])
