@@ -15,6 +15,7 @@ import pickle
 from scipy.sparse import csgraph
 import itertools
 import pickle
+import louvain
 
 nodesListData = pandas.read_csv("anode.csv")
 reassignId = nodesListData["id"].tolist()
@@ -34,10 +35,14 @@ g = Graph.simplify(g)
 #  remove isolated nodes
 g.delete_vertices(g.vs.select(_degree=0))
 
-infomap_clutsers = g.community_infomap()
-layout = g.layout("kk")
-plot(infomap_clutsers.membership, "graph.pdf", layout=layout)
+# infomap_clutsers = g.community_infomap()
+# layout = g.layout("kk")
+# plot(infomap_clutsers.membership, "graph.pdf", layout=layout)
 # print(max(infomap_clutsers.membership))
+
+louvains = louvain.find_partition(g, louvain.ModularityVertexPartition)
+layout = g.layout("kk")
+plot(louvains.membership, "louvains.pdf", layout=layout)
 
 
 
