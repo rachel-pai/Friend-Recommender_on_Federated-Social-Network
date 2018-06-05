@@ -1,0 +1,134 @@
+*Vertices 66
+1 "1" url "https://mstdn.jp/@rkng"
+2 "2" url "https://kirakiratter.com/@tonisenP"
+3 "3" url "https://mstdn.jp/@HirokawaKeiichi"
+4 "4" url "https://mstdn.jp/@pikariku"
+5 "5" url "https://mstdn.jp/@shinkani556"
+6 "6" url "https://mstdn.jp/@kimamanakai"
+7 "7" url "https://pawoo.net/@comloid"
+8 "8" url "https://mstdn.jp/@KH9004F"
+9 "9" url "https://mstdn.jp/@S_C_008"
+10 "10" url "https://mstdn.jp/@k16mx"
+11 "11" url "https://mstdn.jp/@kinntyann"
+12 "12" url "https://mstdn.jp/@comloid"
+13 "13" url "https://mstdn.jp/@AGTVONA"
+14 "14" url "https://mstdn.jp/@four_4"
+15 "15" url "https://mstdn.jp/@miwpayou0808"
+16 "16" url "https://pawoo.net/@rinshan19"
+17 "17" url "https://mstdn.jp/@POLICiA_91120"
+18 "18" url "https://mstdn.jp/@DemekinG"
+19 "19" url "https://mstdn.jp/@nattaw"
+20 "20" url "https://mstdn.jp/@flankmelody0319"
+21 "21" url "https://pawoo.net/@Nunnba"
+22 "22" url "https://pawoo.net/@inuhati323"
+23 "23" url "https://pawoo.net/@oberoffer"
+24 "24" url "https://mstdn.neriko.net/@nerikeshi"
+25 "25" url "https://pawoo.net/@nerikeshi"
+26 "26" url "https://mstdn.jp/@mikichos117"
+27 "27" url "https://mstdn.jp/@tanukitipontaro"
+28 "28" url "https://mstdn.jp/@gyosyo"
+29 "29" url "https://pawoo.net/@takatetsu"
+30 "30" url "https://mstdn.jp/@nosmok"
+31 "31" url "https://mstdn.jp/@matsubara2102"
+32 "32" url "https://mstdn.jp/@gralos_5177"
+33 "33" url "https://mstdn.jp/@kemikaru_kuriq09"
+34 "34" url "https://mstdn.jp/@knkn"
+35 "35" url "https://mstdn.jp/@manche"
+36 "36" url "https://mstdn.jp/@sugi_must"
+37 "37" url "https://mstdn.jp/@takax3"
+38 "38" url "https://mstdn.jp/@Angel_Snow"
+39 "39" url "https://mstdn.jp/@bbiexp0457"
+40 "40" url "https://mstdn.jp/@kaze_kusuri"
+41 "41" url "https://mstdn.jp/@bryophyta2000"
+42 "42" url "https://pawoo.net/@dorzen"
+43 "43" url "https://mstdn.jp/@Panuel_Parsley"
+44 "44" url "https://mstdn.jp/@Mitchell"
+45 "45" url "https://pawoo.net/@nagayari"
+46 "46" url "https://mstdn.jp/@yopc_yuuu"
+47 "47" url "https://pawoo.net/@itallinc"
+48 "48" url "https://mstdn.jp/@catcafeakiba"
+49 "49" url "https://mstdn.jp/@kumakuma_sann"
+50 "50" url "https://mstdn.jp/@mana9356"
+51 "51" url "https://mstdn.jp/@joker_a"
+52 "52" url "https://mstdn.jp/@mtdyoukei"
+53 "53" url "https://mstdn.jp/@tom_nagoyan"
+54 "54" url "https://mstdn.jp/@Exp_HITACHI"
+55 "55" url "https://mstdn.jp/@1919tec"
+56 "56" url "https://mstdn.jp/@nukopal"
+57 "57" url "https://pawoo.net/@ef210kumaichi"
+58 "58" url "https://mstdn.jp/@MRKM_weiche"
+59 "59" url "https://mstdn.jp/@airport_express"
+60 "60" url "https://mstdn.jp/@minagare"
+61 "61" url "https://mstdn.jp/@akina1015"
+62 "62" url "https://mstdn.jp/@Strelka"
+63 "63" url "https://friends.nico/@yjsenrisen"
+64 "64" url "https://mstdn.jp/@Meguro_N01"
+65 "65" url "https://mstdn.jp/@railrakka"
+66 "66" url "https://mstdn.jp/@sa_1mn"
+*Arcs
+2 1
+2 3
+4 5
+4 6
+7 5
+7 8
+7 9
+7 10
+7 11
+7 12
+7 13
+14 15
+14 16
+14 17
+14 18
+14 19
+20 15
+20 21
+20 22
+20 23
+20 24
+20 25
+20 26
+20 27
+20 28
+29 8
+29 13
+29 30
+29 31
+29 32
+29 33
+29 34
+29 35
+29 36
+29 37
+29 38
+29 39
+40 1
+40 18
+40 41
+40 42
+40 43
+40 44
+40 45
+40 46
+47 12
+47 48
+47 49
+47 50
+47 51
+47 52
+47 53
+54 23
+54 31
+54 55
+54 56
+54 57
+54 58
+54 59
+54 60
+54 61
+54 62
+54 63
+54 64
+54 65
+66 43

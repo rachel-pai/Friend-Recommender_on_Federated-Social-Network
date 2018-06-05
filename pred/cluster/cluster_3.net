@@ -1,0 +1,121 @@
+*Vertices 59
+1 "1" url "https://mstdn.jp/@yagitch"
+2 "2" url "https://mstdn.jp/@Hiro1"
+3 "3" url "https://pawoo.net/@halcana"
+4 "4" url "https://mstdn.jp/@xynw"
+5 "5" url "https://mstdn.jp/@kome_niku_sio"
+6 "6" url "https://pawoo.net/@poyozo_"
+7 "7" url "https://mstdn.jp/@orz_"
+8 "8" url "https://mstdn.jp/@nimonokb"
+9 "9" url "https://pawoo.net/@gundamer"
+10 "10" url "https://mstdn.jp/@solomm9"
+11 "11" url "https://mstdn.jp/@yabedon"
+12 "12" url "https://mstdn.jp/@bukurojpn"
+13 "13" url "https://mstdn.jp/@_awghwy_"
+14 "14" url "https://mstdn.jp/@sytoh"
+15 "15" url "https://mstdn.jp/@I_Tubalcain"
+16 "16" url "https://mstdn.jp/@DOGEgG1971r"
+17 "17" url "https://pawoo.net/@Stealth_Filmcomic"
+18 "18" url "https://mastodon.cloud/@jaggannath45"
+19 "19" url "https://mstdn.jp/@m0m0mo"
+20 "20" url "https://mstdn.jp/@yu3yuyuyu3"
+21 "21" url "https://gbtdn.tokyo/@orzkawa_Gay"
+22 "22" url "https://friends.nico/@P_Gengen"
+23 "23" url "https://mstdn.jp/@tofuhard"
+24 "24" url "http://mastodon.oresys.nagoya/@Big_Feild"
+25 "25" url "https://friends.nico/@torawo"
+26 "26" url "https://mayodon.club/@IchigoMayo"
+27 "27" url "https://witches.town/@Angle"
+28 "28" url "https://mastodon.social/@sakimorisyunka"
+29 "29" url "https://mstdn.jp/@kazwoo215"
+30 "30" url "https://mstdn.jp/@mahata"
+31 "31" url "https://friends.nico/@hige0609"
+32 "32" url "https://mstdn.jp/@yositosi"
+33 "33" url "https://mstdn.onosendai.jp/@u"
+34 "34" url "https://mastodon.technology/@sgoodwin"
+35 "35" url "https://quitter.no/ai"
+36 "36" url "https://mstdn.nl/@Bunkerheadz"
+37 "37" url "https://vocalodon.net/@akishi"
+38 "38" url "https://mastodon.cloud/@AccordionGuy"
+39 "39" url "https://pawoo.net/@hama040164"
+40 "40" url "https://mstdn.jp/@saber"
+41 "41" url "https://mstdn.jp/@a2402031"
+42 "42" url "https://mstdn.jp/@katinoi"
+43 "43" url "https://mstdn.jp/@pnd"
+44 "44" url "https://mstdn.jp/@for"
+45 "45" url "https://pawoo.net/@eagle02"
+46 "46" url "https://mstdn.jp/@KuraMasa"
+47 "47" url "https://mstdn.jp/@bass_clef_"
+48 "48" url "https://mstdn.jp/@taluru"
+49 "49" url "https://mstdn.jp/@KosaFee"
+50 "50" url "https://mstdn.jp/@masakin"
+51 "51" url "https://mstdn.kemono-friends.info/@Howard_P"
+52 "52" url "https://mstdn.jp/@imasashi"
+53 "53" url "https://m.4ac.me/@mikansensei"
+54 "54" url "https://pawoo.net/@danson"
+55 "55" url "https://mstdn.jp/@Ryomag"
+56 "56" url "https://pawoo.net/@murbo"
+57 "57" url "https://pawoo.net/@aozikosyoten"
+58 "58" url "https://pawoo.net/@mtempa"
+59 "59" url "https://pawoo.net/@alpinev6turbo"
+*Arcs
+1 2
+1 3
+1 4
+1 5
+1 6
+1 7
+1 8
+1 9
+1 10
+1 11
+1 12
+1 13
+1 14
+1 15
+1 16
+1 17
+1 18
+1 19
+1 20
+1 21
+1 22
+1 23
+1 24
+1 25
+1 26
+1 27
+1 28
+1 29
+1 30
+1 31
+21 1
+28 1
+32 33
+33 1
+34 1
+35 1
+36 1
+37 1
+38 1
+39 1
+40 1
+41 20
+42 1
+43 1
+44 1
+45 1
+46 1
+47 1
+48 1
+49 1
+50 1
+51 1
+52 1
+53 1
+54 1
+55 1
+56 1
+57 1
+58 1
+59 1

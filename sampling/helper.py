@@ -128,9 +128,9 @@ def addmisingedges(edgeFileName, nodeFileName):
 
 # addmisingedges('BFS_edge.csv','BFS_node.csv')
 # addmisingedges('RR_edge.csv','RR_node.csv')
-findnode = addmisingedges('DFS_edge.csv','DFS_node.csv')
-findnode['id'].astype(int)
-findnode.to_csv('../data/DFS_node.csv', index=False)
+# findnode = addmisingedges('DFS_edge.csv','DFS_node.csv')
+# findnode['id'].astype(int)
+# findnode.to_csv('../data/DFS_node.csv', index=False)
 
 # RWnode = pd.read_csv('../data/BFS_node.csv',index_col=0)
 # RWnode.to_csv('../data/BFS_node.csv',index=False)
@@ -138,7 +138,14 @@ findnode.to_csv('../data/DFS_node.csv', index=False)
 # RWnode = pd.read_csv('../data/DFS_node.csv',index_col=0)
 # RWnode.to_csv('../data/DFS_node.csv',index=False)
 
-# addMissingNode('../data/BFS_edge','../data/BFS_node',header=['id','user','url'])
-RWnode = pd.read_csv('../data/anode.csv')
-newdf = RWnode.drop_duplicates('id')
-newdf.to_csv('../data/anode.csv',index=False)
+# # addMissingNode('../data/BFS_edge','../data/BFS_node',header=['id','user','url'])
+# contList = [ 428038.0,110607.0,35326.0,11362.0, 53882.0,19581.0,90749.0,165060.0,53965.0,325871.0,119035.0,301856.0,207676.0,320844.0,1872.0,54673.0,470932.0,104855.0,89500.0,477610.0,102846.0,445392.0,2539.0,110575.0]
+# df = pd.read_csv('../data/BFS_edge.csv')
+# df = df.dropna()
+# df = df.drop_duplicates()
+# df = df[~df.isin(contList)]
+# df = df.dropna()
+# df.to_csv('../data/BFS_edge2.csv',index=False)
+df = pd.read_csv('../data/BFS_node.csv')
+df = df.drop_duplicates('id')
+df.to_csv('../data/BFS_node.csv',index=False)

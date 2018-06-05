@@ -74,10 +74,10 @@ from scipy.sparse import csgraph
 import itertools
 import pickle
 
-nodesListData = pandas.read_csv("all_node.csv")
+nodesListData = pandas.read_csv("anode.csv")
 reassignId = nodesListData["id"].tolist()
 getDict = {elem: count for count, elem in enumerate(reassignId)}
-edgeListData = pandas.read_csv("all_edge.csv")
+edgeListData = pandas.read_csv("aedge.csv")
 
 edgeListData["from"].replace(getDict, inplace=True)
 edgeListData["to"].replace(getDict, inplace=True)
