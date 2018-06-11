@@ -8,6 +8,16 @@
 
 # find clusteriing of data
 import louvain
+import os
+# import igraph
+from igraph import *
+from topology import *
+import numpy as np
+import pickle
+
+with open('../pred/newTestGraph', 'rb') as score_file:
+    score_file.seek(0)
+    wholeGraph = pickle.load(score_file)
 
 def collectFeature(graph,cID):
     '''
@@ -15,14 +25,31 @@ def collectFeature(graph,cID):
     '''
     prede = topology(graph)
     flatten_matrix = prede.adjmatrix.flatten()  # label
-    with open('../pred/temp/y_labels_'+str(cID), 'wb') as fp:
-        pickle.dump(flatten_matrix, fp)
+    flatten_matrix = []
 
+    flatten_matrix_c = []
     col_and_row = np.unravel_index(list(range(prede.n * prede.n)), (prede.n, prede.n))
     ## get the corresponding index of the flatten matrix
     all_matrix = []
     for i, j in zip(col_and_row[0], col_and_row[1]):
         all_matrix.append([i, j])
+    for i, j in zip(col_and_row[0], col_and_row[1]):
+        labelFrom = graph.vs[i]["label"]
+        labelTo = graph.vs[j]["label"]
+        fromID = wholeGraph.vs(label_eq=labelFrom)
+        toID = wholeGraph.vs(label_eq=labelTo)
+        fromID = fromID[0].index
+        toID = toID[0].index
+        # flatten_matrix_c.append({"fromC":graph.vs[i]["label"],"toC":graph.vs[j]["label"],"fromW":wholeGraph.vs[fromID]["label"],
+        #                          "toW":wholeGraph.vs[toID]["label"],"edge":wholeGraph.get_eid(fromID, toID, directed=False, error=False)})
+        flatten_matrix.append(wholeGraph.get_eid(fromID, toID, directed=False, error=False))
+        # search in the whole graph ,whether connected
+    with open('../pred/temp/test/y_labels_' + str(cID), 'wb') as fp:
+        pickle.dump(flatten_matrix, fp)
+    # import json
+    # with open('outputfile', 'w') as fout:
+    #     json.dump(flatten_matrix_c, fout)
+    # print(flatten_matrix)
 
     # for each i,j pair get the corresponding score
     score_matirx = []
@@ -37,92 +64,54 @@ def collectFeature(graph,cID):
         j = item[1]
         item_score = []
         item_score.append(RPR_socre[i, j])
+        print("start RPR")
         item_score.append(simRank_score[i, j])
+        print("start simRank")
         item_score.append(katz_score[i, j])
+        print("start katz")
         item_score.append(aa_score[i, j])
+        print("start aa")
         item_score.append(tweak_score[i, j])
+        print("start tweak")
         item_score.append(prede.CT(i, j))
+        print("start ct")
         item_score.append(prede.CST(i, j))
+        print("start cst")
         # item_score.append(prede.degree_product(i, j))
         item_score.append(prede.CN(i, j))
+        print("stat cn")
         # item_score.append(prede.JC(i, j))
         # item_score.append(prede.SI(i, j))
         item_score.append(prede.SC(i, j))
+        print("start sc")
         item_score.append(prede.HP(i, j))
+        print("start hp")
         # item_score.append(prede.HD(i, j))
         item_score.append(prede.LHN(i, j))
+        print("start LHN")
         item_score.append(prede.PD(i, j))
+        print("start pd")
         # item_score.append(prede.AA(i,j))
         # item_score.append(prede.PA(i, j))
         item_score.append(prede.RA(i, j))
+        print("start RA")
         score_matirx.append(item_score)
 
-    with open('../pred/temp/score_matirx_'+str(cID), 'wb') as fp:
+    with open('../pred/temp/test/score_matirx_'+str(cID), 'wb') as fp:
         pickle.dump(score_matirx, fp)
 
-import numpy as np
-import pickle
-from sklearn.decomposition import PCA
-import os
-# import igraph
-from igraph import *
-import pandas
-from topology import *
-import numpy as np
-import pickle
-from scipy.sparse import csgraph
-import itertools
-import pickle
-
-nodesListData = pandas.read_csv("anode.csv")
-reassignId = nodesListData["id"].tolist()
-getDict = {elem: count for count, elem in enumerate(reassignId)}
-edgeListData = pandas.read_csv("aedge.csv")
-
-edgeListData["from"].replace(getDict, inplace=True)
-edgeListData["to"].replace(getDict, inplace=True)
-subset = edgeListData[["from", "to"]]
-edgeList = [tuple(x) for x in subset.values]
-
-vertices = nodesListData["user"].tolist()
-urlList = nodesListData["url"].tolist()
-g = Graph(vertex_attrs={"label": vertices, "url": urlList}, edges=edgeList, directed=True)
-
-g = Graph.simplify(g)
-#  remove isolated nodes
-g.delete_vertices(g.vs.select(_degree=0))
-
-''''
-need c components: community_optimal_modularity 
-todo: ask Dai to run this method 
-'''
-infomap_clutsers = g.community_infomap()
-# get the custering graph
-clusters = infomap_clutsers.subgraphs()
-# save clusters into csv files
-# run once time
-for n,graphs in enumerate(clusters):
-    if graphs.vcount() > 50:
-        if graphs.vcount() > 500:
-            # different with community_edge_betweenness()
-            # subsubgraph = graphs.community_walktrap().as_clustering()
-            # subsubgraph = graphs.community_infomap()
-            subsubgraph = louvain.find_partition(graphs, louvain.ModularityVertexPartition)
-            subsubgraphs = subsubgraph.subgraphs()
-            for c,subsubgraph in enumerate(subsubgraphs):
-                if subsubgraph.vcount() > 50:
-                    subsubgraph.save('../pred/cluster/cluster_sub_'+str(c)+'.net')
-        else:
-            graphs.save('../pred/cluster/cluster_' + str(n) + '.net')
 
 
 graphsList = []
-directory = '../pred/cluster/'
+directory = '../pred/cluster/test/'
 for filename in os.listdir(directory):
-    if filename.endswith(".net"):
-        graphsList.append(load(os.path.join(directory, filename)))
+    with open(os.path.join(directory, filename), 'rb') as score_file:
+        score_file.seek(0)
+        temp= pickle.load(score_file)
+    graphsList.append(temp)
 
 score_matrix,flatten_matrix = [],[]
 for c,graph in enumerate(graphsList):
-    collectFeature(graph,c)
+    if c>12:
+        collectFeature(graph,c)
 

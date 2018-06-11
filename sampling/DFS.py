@@ -63,11 +63,11 @@ def getFollowing(iterateNum):
             break
     return followingData, ids
 
-# for i in range(100):
-#     followingData, nodes = getFollowing(20)
-#     print("beginning !!")
-#     writeIntoCsvFile(filename='../data/DFS_node_temp', header=['id', 'user', 'url'], writenData=nodes)
-#     writeIntoCsvFile(filename='../data/DFS_edge', header=['from', 'to'], writenData=followingData)
-#     removeDuplicate('../data/DFS_node_temp', '../data/DFS_node')
+for i in range(100):
+    followingData, nodes = getFollowing(20)
+    print("beginning !!")
+    writeIntoCsvFile(filename='../data/DFS_node_temp_2', header=['id', 'user', 'url'], writenData=nodes)
+    writeIntoCsvFile(filename='../data/DFS_edge_2', header=['from', 'to'], writenData=followingData)
+    # removeDuplicate('../data/DFS_node_temp_2', '../data/DFS_node')
 # addMissingNode('../data/all_edge', '../data/all_node', header=['id', 'user', 'url'])
 

@@ -16,6 +16,7 @@ from more_itertools import unique_everseen
 import copy
 import pandas as pd
 
+
 class Node(object):
     def __init__(self, id):
         self.id = id
@@ -45,6 +46,7 @@ class Node(object):
 
     def getFollowingId(self):
         return [x.id for x in self.getFollowing()]
+
 
 def writeIntoCsvFile(filename, header, writenData):
     writeHead = True
@@ -101,28 +103,29 @@ def getRandomlyUser(num):
             break
     return vertice
 
+
 def addmisingedges(edgeFileName, nodeFileName):
-    RWnode = pd.read_csv('../data/'+edgeFileName)
+    RWnode = pd.read_csv('../data/' + edgeFileName)
     newdf = RWnode.drop_duplicates()
     print(newdf.head(10))
-    findnode = pd.read_csv('../data/'+nodeFileName)
+    findnode = pd.read_csv('../data/' + nodeFileName)
     # findnode = findnode('id')
     # newdf = RWnode.drop_duplicates('id')
     # newdf.to_csv('../data/RR_node.csv',index=False)
     missingIds = list(set(newdf['from']) - set(findnode['id']))
-    print("missing form",missingIds)
+    print("missing form", missingIds)
     for missingId in missingIds:
         node_temp = Node(missingId)
-        findnode = findnode.append({'id': node_temp.id, 'user': node_temp.name, 'url': node_temp.url},ignore_index=True)
+        findnode = findnode.append({'id': node_temp.id, 'user': node_temp.name, 'url': node_temp.url},
+                                   ignore_index=True)
 
     missingIds = list((set(newdf['to'])) - set(findnode['id']))
-    print("missing to",missingIds)
+    print("missing to", missingIds)
     for missingId in missingIds:
         node_temp = Node(missingId)
         findnode = findnode.append({'id': node_temp.id, 'user': node_temp.name, 'url': node_temp.url},
                                    ignore_index=True)
     return findnode
-
 
 
 # removeDuplicate('../data/DS_node','../data/DS_node2')
@@ -141,19 +144,19 @@ def addmisingedges(edgeFileName, nodeFileName):
 
 # addMissingNode('../data/BFS_edge','../data/BFS_node',header=['id','user','url'])
 
-nodes = pd.read_csv('../data/BFS_node2.csv')
-null_columns=nodes.columns[nodes.isnull().any()]
+nodes = pd.read_csv('../data/anode.csv')
+null_columns = nodes.columns[nodes.isnull().any()]
 missingid = list(set(nodes[nodes.isnull().any(axis=1)]['id']))
-print("missinid",missingid)
+print("missinid", missingid)
 df = pd.DataFrame(columns=['id', 'user', 'url'])
 for i in missingid:
     try:
         account = mastodon.account(i)
         name = account['username']
         url = account['url']
-        df.loc[i] = [i,name,url]
+        df.loc[i] = [i, name, url]
     except:
-        print("cant id",i)
-
+        print("cant id", i)
 print(df.head(10))
-df.to_csv('BFS_node3.csv', index=False)
+df.to_csv('anode2.csv', index=False)
+

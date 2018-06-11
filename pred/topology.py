@@ -357,14 +357,14 @@ class topology(object):
         if mode == "out":
             common_neighbors = self.common_neighbors(i, j)
             degreeslist = [self.outdegrees[item] for item in common_neighbors]
-            if common_neighbors and all(v == 0 for v in degreeslist):
+            if common_neighbors and not (all(v == 0 for v in degreeslist)):
                 return sum([1 / self.outdegrees[item] for item in common_neighbors if self.outdegrees[item]])
             else:
                 return 0
         elif mode == "in":
             common_neighbors = self.common_neighbors(i, j, mode="in")
             degreeslist = [self.indegrees[item] for item in common_neighbors]
-            if common_neighbors and all(v == 0 for v in degreeslist):
+            if common_neighbors and not (all(v == 0 for v in degreeslist)):
                 return sum([1 / self.indegrees[item] for item in common_neighbors if self.indegrees[item]])
             else:
                 return 0

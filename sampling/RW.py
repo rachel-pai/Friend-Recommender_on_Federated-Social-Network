@@ -50,6 +50,6 @@ def getFollowing(iterateNum):
 
 for i in range(2):
     followingData, nodes = getFollowing(100)
-    writeIntoCsvFile(filename='../data/RW_node_temp', header=['id', 'user', 'url'], writenData=nodes)
-    writeIntoCsvFile(filename='../data/RW_edge', header=['from', 'to'], writenData=followingData)
-    removeDuplicate('../data/RW_node_temp', '../data/RW_node')
+    writeIntoCsvFile(filename='../data/RW_node_temp_2', header=['id', 'user', 'url'], writenData=nodes)
+    writeIntoCsvFile(filename='../data/RW_edge_2', header=['from', 'to'], writenData=followingData)
+    # removeDuplicate('../data/RW_node_temp', '../data/RW_node')

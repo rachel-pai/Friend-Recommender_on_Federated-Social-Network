@@ -22,6 +22,6 @@ def getFollowing(num):
 
 for i in range(3):
    followingData,nodes = getFollowing(50)
-   writeIntoCsvFile(filename='../data/RR_node_temp', header = ['id','user','url'],writenData=nodes)
-   writeIntoCsvFile(filename='../data/RR_edge', header = ['from','to'],writenData=followingData)
+   writeIntoCsvFile(filename='../data/RR_node_temp_2', header = ['id','user','url'],writenData=nodes)
+   writeIntoCsvFile(filename='../data/RR_edge_2', header = ['from','to'],writenData=followingData)
    # removeDuplicate('../data/RR_node_temp','../data/RR_node')
