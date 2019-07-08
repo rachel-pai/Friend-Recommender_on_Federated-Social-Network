@@ -37,6 +37,9 @@ infomap and louvian algorithms
 * decision tree
 * random forest
 
+Classifiers were trained on Spark.
+Code was also published on [Databricks](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3472776414846792/37822860499064/5811782744933419/latest.html).
+
 ## Detail Methods
 See the report for details 
 
