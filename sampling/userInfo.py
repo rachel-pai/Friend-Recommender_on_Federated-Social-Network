@@ -22,8 +22,8 @@ mastodon = Mastodon(
     api_base_url='https://mstdn.jp'
 )
 mastodon.log_in(
-    'rachelchen0831@gmail.com',
-    'sunshine2020',
+    'your-registered-email-address',
+    'your-password',
     to_file='pytooter_usercred.secret'
 )
 
