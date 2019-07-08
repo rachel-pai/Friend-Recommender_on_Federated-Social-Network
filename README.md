@@ -37,7 +37,7 @@ infomap and louvian algorithms
 * decision tree
 * random forest
 
-## detail Methods
+## Detail Methods
 See the report for details 
 
 
